@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+// Hero component for derek.ai landing page
 export default function Hero() {
   return (
     <div className="relative isolate overflow-hidden">
