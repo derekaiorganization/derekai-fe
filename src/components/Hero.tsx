@@ -22,17 +22,17 @@ export default function Hero() {
             </a>
           </div>
           <h1 className="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-            Transform Your Learning with AI-Powered Flashcards
+            La forma más rápida de dominar el ENARM
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Upload any PDF, image, or presentation. Derek.ai instantly creates intelligent flashcards to supercharge your study sessions. Learn smarter, not harder.
+            Genera flashcards y simulacros de examen en segundos con métodos comprobados científicamente para que no olvides nada.
           </p>
           <div className="mt-10 flex items-center">
             <a
               href="#"
               className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              Get started
+              Comenzar
             </a>
           </div>
         </div>
