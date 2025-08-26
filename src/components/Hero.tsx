@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { Button } from './ui/button';
 
 // Hero component for derek.ai landing page
 export default function Hero() {
@@ -12,40 +13,28 @@ export default function Hero() {
       </div>
 
       {/* Hero content */}
-      <div className="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40">
-        <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
-          <div className="mt-24 sm:mt-32 lg:mt-16">
-            <a href="#" className="inline-flex space-x-6">
-              <span className="rounded-full bg-indigo-600/10 px-3 py-1 text-sm font-semibold leading-6 text-indigo-600 ring-1 ring-inset ring-indigo-600/10">
-                Beta Access
-              </span>
-            </a>
-          </div>
-          <h1 className="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-            La forma más rápida de dominar el ENARM
-          </h1>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            Genera flashcards y simulacros de examen en segundos con métodos comprobados científicamente para que no olvides nada.
-          </p>
-          <div className="mt-10 flex items-center">
-            <a
-              href="#"
-              className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            >
-              Comenzar
-            </a>
-          </div>
-        </div>
-        <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none xl:ml-32">
-          <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
-            <div className="rounded-xl bg-white/50 backdrop-blur-sm p-8 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
-              <div className="aspect-[16/10] rounded-md bg-indigo-50/50 p-8 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-2xl font-semibold text-indigo-600 mb-2">derek.ai</div>
-                  <div className="text-gray-500">Flashcard Preview Coming Soon</div>
-                </div>
-              </div>
-            </div>
+      <div className="mx-auto max-w-3xl px-7 pb-24 pt-20 flex flex-col items-center justify-center text-center">
+        <h1 className="text-4xl font-libertinus font-semibold tracking-tight text-gray-900 sm:text-6xl mb-1">
+          Estudia el doble, en la mitad del tiempo
+        </h1>
+        <p className="font-inter mt-3 mb-5 text-base/2 leading-8 text-gray-900">
+          Genera flashcards y quizzes de tus apuntes en segundos, estudia con métodos comprobados científicamente para que no vuelvas a olvidar nada
+        </p>
+        <div className="relative w-[90vw] max-w-7xl self-center my-6">
+          <Image
+            src="/images/mainheroimage.svg"
+            alt="derek.ai logo"
+            width={2000}
+            height={800}
+            quality={100}
+            priority
+            className="w-full h-auto"
+          />
+          {/* Button slightly on top of the image */}
+          <div className="absolute left-1/2 top-[80%] transform -translate-x-1/2 z-10">
+            <Button className='px-10 py-4 text-base font-normal'>
+              Comenzar hoy
+            </Button>
           </div>
         </div>
       </div>
