@@ -18,48 +18,42 @@ export function LoginForm({
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
         <CardHeader>
-          <CardTitle>Login to your account</CardTitle>
-          <CardDescription>
-            Enter your email below to login to your account
+          <CardTitle className="font-libertinus font-semibold text-2xl tracking-tighter text-center">Regístrate hoy</CardTitle>
+          <CardDescription className="text-center">
+            Ingresa tu correo electrónico para registrarte en tu cuenta
           </CardDescription>
         </CardHeader>
         <CardContent>
           <form>
             <div className="flex flex-col gap-6">
               <div className="grid gap-3">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email">Correo electrónico</Label>
                 <Input
                   id="email"
                   type="email"
-                  placeholder="m@example.com"
+                  placeholder="m@ejemplo.com"
                   required
                 />
               </div>
               <div className="grid gap-3">
                 <div className="flex items-center">
-                  <Label htmlFor="password">Password</Label>
-                  <a
-                    href="#"
-                    className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
-                  >
-                    Forgot your password?
-                  </a>
+                  <Label htmlFor="Contraseña">Contraseña</Label>
                 </div>
                 <Input id="password" type="password" required />
               </div>
               <div className="flex flex-col gap-3">
                 <Button type="submit" className="w-full">
-                  Login
+                  Registrarme
                 </Button>
                 <Button variant="outline" className="w-full">
-                  Login with Google
+                  Registrarme con Google
                 </Button>
               </div>
             </div>
             <div className="mt-4 text-center text-sm">
-              Don&apos;t have an account?{" "}
+              ¿Ya tienes una cuenta?{" "}
               <a href="#" className="underline underline-offset-4">
-                Sign up
+                Iniciar sesión
               </a>
             </div>
           </form>

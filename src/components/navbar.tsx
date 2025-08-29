@@ -22,12 +22,9 @@ export default function Navbar({ onLoginClick }: NavbarProps) {
       </Link>
       {/* Button */}
       <div className="flex items-center gap-4">
-        <Button>
+        <Button onClick={onLoginClick}>
           Registrarme
         </Button>
-        <button onClick={onLoginClick} className="text-blue-500 hover:underline">
-          Login
-        </button>
       </div>
     </nav>
   )

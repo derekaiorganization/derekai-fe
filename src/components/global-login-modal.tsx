@@ -19,10 +19,9 @@ export default function GlobalLoginModal({
   if (!open) return null;
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent>
+    <Dialog open={open} onOpenChange={onClose}>
+      <DialogContent className="bg-transparent shadow-none border-none">
         <LoginForm />
-        <button onClick={onClose}>Close</button>
       </DialogContent>
     </Dialog>
   );

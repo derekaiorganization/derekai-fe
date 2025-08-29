@@ -1,8 +1,12 @@
 "use client"
 import { Button } from "./ui/button";
 
-export default function Calltoaction() {
-    return (
+type CalltoactionProps = {
+  onLoginClick: () => void;
+};
+
+export default function Calltoaction({ onLoginClick }: CalltoactionProps) {
+  return (
     <div className="relative py-14 flex flex-col items-center justify-center">
       {/* Background pattern */}
       <div className="absolute inset-0 -z-10">
@@ -21,9 +25,7 @@ export default function Calltoaction() {
         <div className="mt-1">
             <Button
             size="lg"
-            onClick={() => {
-                window.location.href = "https://forms.gle/8J5b5rY7mYk9s4tX9";
-            }}
+            onClick={onLoginClick}
             >
             Regístrate ahora
             </Button>
@@ -31,9 +33,7 @@ export default function Calltoaction() {
         <div className="mt-1">
             <Button
             size="lg"
-            onClick={() => {
-                window.location.href = "https://forms.gle/8J5b5rY7mYk9s4tX9";
-            }}
+            onClick={onLoginClick}
             >
             Regístrate con Google
             </Button>

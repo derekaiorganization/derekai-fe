@@ -15,10 +15,10 @@ export default function Home() {
     <>
       <main className="min-h-screen">
         <Navbar onLoginClick={() => setModalOpen(true)} />
-        <Hero />
+        <Hero onLoginClick={() => setModalOpen(true)}/>
         <DocumentLoad />
         <Benefits />
-        <Calltoaction />
+        <Calltoaction onLoginClick={() => setModalOpen(true)} />
         <Footer2 />
       </main>
       <GlobalLoginModal open={modalOpen} onClose={() => setModalOpen(false)} />
