@@ -3,7 +3,11 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "./ui/button"
 
-export default function Navbar() {
+type NavbarProps = {
+  onLoginClick: () => void;
+};
+
+export default function Navbar({ onLoginClick }: NavbarProps) {
   return (
     <nav className="flex items-center justify-between px-6 py-4 bg-white shadow">
       {/* Logo */}
@@ -17,9 +21,14 @@ export default function Navbar() {
         />
       </Link>
       {/* Button */}
-      <Button>
-        Registrarme
-      </Button>
+      <div className="flex items-center gap-4">
+        <Button>
+          Registrarme
+        </Button>
+        <button onClick={onLoginClick} className="text-blue-500 hover:underline">
+          Login
+        </button>
+      </div>
     </nav>
   )
 }
