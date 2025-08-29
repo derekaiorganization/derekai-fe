@@ -14,7 +14,7 @@ export default function Calltoaction({ onLoginClick }: CalltoactionProps) {
           <div className="absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
         </div>
       </div>{/* Centered Title and Paragraph */}
-      <div className="text-center mb-6 mt-24">
+      <div className="text-center mb-6 mt-24 w-full sm:w-[90vw] mx-auto">
         <h2 className="text-5xl font-libertinus font-semibold text-gray-900 mb-3 tracking-tighter">
           Acelera tu aprendizaje hoy
         </h2>
