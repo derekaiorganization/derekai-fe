@@ -1,12 +1,17 @@
 "use client"
+import Link from 'next/link';
 import Image from 'next/image';
-import { Button } from './ui/button';
+import { Button } from './ui/Button';
 import { supabaseBrowser } from '@/lib/supabase/browser';
 import { useEffect, useState } from 'react';
-import WelcomeModal from './ui/welcomeModal';
+import WelcomeModal from './ui/WelcomeModal';
+
+type HeroProps = {
+  onLoginClick: () => void;
+};
 
 // Hero component for derek.ai landing page
-export default function Hero() {
+export default function Hero({ onLoginClick }: HeroProps) {
   const supabase = supabaseBrowser;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -88,7 +93,6 @@ export default function Hero() {
     setLoading(false);
   };
 
-
   return (
     <>
       <div className="relative isolate overflow-hidden">
@@ -119,18 +123,17 @@ export default function Hero() {
             />
             {/* Button slightly on top of the image */}
             <div className="absolute left-1/2 top-[80%] transform -translate-x-1/2 z-10">
-              <Button onClick={signInWithGoogle} disabled={loading} className='px-10 py-4 text-base font-normal'>
+              <Button className='px-10 py-4 text-base font-normal' onClick={onLoginClick}>
                 Comenzar hoy
               </Button>
             </div>
           </div>
         </div>
+        <WelcomeModal isOpen={modalOpen} onClose={() => setModalOpen(false)}>
+          <h2 className="text-xl font-bold">Welcome!</h2>
+          <p>You are logged in successfully.</p>
+        </WelcomeModal>
       </div>
-      <WelcomeModal isOpen={modalOpen} onClose={() => setModalOpen(false)}>
-        <h2 className="text-xl font-bold">Welcome!</h2>
-        <p>You are logged in successfully.</p>
-      </WelcomeModal>
-
     </>
   );
 }
