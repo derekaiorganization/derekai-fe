@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link"
 import Image from "next/image"
-import { Button } from "./ui/Button"
+import { Button } from "./ui/Button2"
 
 type NavbarProps = {
   onLoginClick: () => void;
