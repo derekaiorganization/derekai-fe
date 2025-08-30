@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Dialog, DialogContent } from "@/components/ui/Dialog2";
+import { Dialog, DialogContent } from "@/components/ui/Dialog";
 import { LoginForm } from "./LoginForm";
 import { useLoginModal } from "@/hooks/use-login-modal";
 

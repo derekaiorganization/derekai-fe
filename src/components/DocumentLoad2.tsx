@@ -1,4 +1,4 @@
-import { Button } from "./ui/Button2";
+import { Button } from "./ui/Button";
 import { FaFilePdf, FaFileWord, FaFilePowerpoint } from "react-icons/fa";
 
 export default function DocumentLoad() {

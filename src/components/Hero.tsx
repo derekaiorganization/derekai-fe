@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Button } from './ui/Button2';
+import { Button } from './ui/Button';
 
 type HeroProps = {
   onLoginClick: () => void;

@@ -1,9 +1,9 @@
 "use client"
 import { useState } from 'react';
-import Benefits from '@/components/Benefits2';
+import Benefits from '@/components/Benefits';
 import DocumentLoad from '@/components/DocumentLoad2';
 import Hero from '@/components/Hero';
-import Navbar from '@/components/Navbar2';
+import Navbar from '@/components/Navbar';
 import Calltoaction from '@/components/CallToAction';
 import { Footer } from '@/components/Footer';
 import GlobalLoginModal from '@/components/GlobalLoginModal';
