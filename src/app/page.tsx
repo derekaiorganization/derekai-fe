@@ -1,12 +1,12 @@
 "use client"
 import { useState } from 'react';
-import Benefits from '@/components/benefits';
-import DocumentLoad from '@/components/documentload';
+import Benefits from '@/components/Benefits';
+import DocumentLoad from '@/components/DocumentLoad';
 import Hero from '@/components/Hero';
-import Navbar from '@/components/navbar';
-import Calltoaction from '@/components/cta';
-import { Footer2 } from '@/components/footer2';
-import GlobalLoginModal from '@/components/global-login-modal';
+import Navbar from '@/components/Navbar';
+import Calltoaction from '@/components/CallToAction';
+import { Footer } from '@/components/Footer';
+import GlobalLoginModal from '@/components/GlobalLoginModal';
 
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -19,7 +19,7 @@ export default function Home() {
         <DocumentLoad />
         <Benefits />
         <Calltoaction onLoginClick={() => setModalOpen(true)} />
-        <Footer2 />
+        <Footer />
       </main>
       <GlobalLoginModal open={modalOpen} onClose={() => setModalOpen(false)} />
     </>

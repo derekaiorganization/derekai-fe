@@ -8,7 +8,7 @@ interface MenuItem {
   }[];
 }
 
-interface Footer2Props {
+interface FooterProps {
   logo?: {
     url: string;
     src: string;
@@ -24,7 +24,7 @@ interface Footer2Props {
   }[];
 }
 
-const Footer2 = ({
+const Footer = ({
   logo = {
     src: "/images/navbarlogo.svg",
     alt: "derekAI",
@@ -62,7 +62,7 @@ const Footer2 = ({
     { text: "Términos y condiciones", url: "#" },
     { text: "Politica de privacidad", url: "#" },
   ],
-}: Footer2Props) => {
+}: FooterProps) => {
   return (
     <section className="py-32 w-screen">
       <div className="w-screen mx-0">
@@ -113,4 +113,4 @@ const Footer2 = ({
   );
 };
 
-export { Footer2 };
+export { Footer };

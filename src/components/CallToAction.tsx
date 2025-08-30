@@ -1,12 +1,12 @@
 "use client"
-import { Button } from "./ui/button";
+import { Button } from "./ui/Button";
 import { FcGoogle } from "react-icons/fc";
 
-type CalltoactionProps = {
+type CallToActionProps = {
   onLoginClick: () => void;
 };
 
-export default function Calltoaction({ onLoginClick }: CalltoactionProps) {
+export default function CallToAction({ onLoginClick }: CallToActionProps) {
   return (
     <div className="relative py-14 flex flex-col items-center justify-center">
       {/* Background pattern */}
