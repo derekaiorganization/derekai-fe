@@ -7,9 +7,9 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/Card"
-import { Input } from "@/components/ui/Input"
-import { Label } from "@/components/ui/Label"
+} from "@/components/ui/Card2"
+import { Input } from "@/components/ui/Input2"
+import { Label } from "@/components/ui/Label2"
 import { supabaseBrowser } from "@/lib/supabase/browser"
 import { useState, useEffect } from "react"
 

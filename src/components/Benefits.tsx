@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Card } from "@/components/ui/Card";
+import { Card } from "@/components/ui/Card2";
 
 export default function Benefits() {
   return (
