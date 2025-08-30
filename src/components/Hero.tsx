@@ -1,10 +1,5 @@
-"use client"
-import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from './ui/Button';
-import { supabaseBrowser } from '@/lib/supabase/browser';
-import { useEffect, useState } from 'react';
-import WelcomeModal from './ui/WelcomeModal';
 
 type HeroProps = {
   onLoginClick: () => void;
@@ -12,86 +7,6 @@ type HeroProps = {
 
 // Hero component for derek.ai landing page
 export default function Hero({ onLoginClick }: HeroProps) {
-  const supabase = supabaseBrowser;
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
-
-  useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => {
-      if (data.session?.user) setModalOpen(true);
-    });
-
-    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
-      if (session?.user) setModalOpen(true);
-    });
-
-    return () => {
-      listener.subscription.unsubscribe();
-    };
-  }, [supabase]);
-
-
-  // Start Google OAuth flow (redirects user)
-  const signInWithGoogle = async () => {
-    setLoading(true);
-    // The redirectTo must match the entry in Supabase & Google Cloud OAuth
-    const redirectTo = `${window.location.origin}/auth/callback`;
-
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: {
-        redirectTo,
-      },
-    });
-
-    // In many setups the browser will already have been redirected by supabase
-    // but in case supabase returns a url, we redirect manually
-    if (error) {
-      alert(error.message);
-      setLoading(false);
-      return;
-    }
-
-    if (data?.url) {
-      window.location.href = data.url;
-    } else {
-      // signInWithOAuth often redirects automatically; nothing else to do here
-      setLoading(false);
-    }
-  };
-
-  // Sign up with email & password
-  const signUpWithEmail = async () => {
-    setLoading(true);
-    const { error } = await supabase.auth.signUp({
-      email,
-      password,
-    });
-    if (error) {
-      alert(error.message);
-    } else {
-      alert("Check your email for a confirmation link (if required).");
-    }
-    setLoading(false);
-  };
-
-  // Sign in with email & password
-  const signInWithEmail = async () => {
-    setLoading(true);
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
-    if (error) {
-      alert(error.message);
-    } else {
-      // On success redirect or reload to get server-side session
-      window.location.href = "/";
-    }
-    setLoading(false);
-  };
   return (
     <div className="relative isolate overflow-hidden">
       {/* Background pattern */}
