@@ -11,8 +11,8 @@ export default function Benefits() {
         </div>
       </div>
       {/* Centered Title and Paragraph */}
-      <div className="text-center mb-24 mt-24">
-        <h2 className="text-5xl font-libertinus font-semibold text-gray-900 mb-3 tracking-tighter">
+      <div className="w-[90vw] text-center mb-12 mt-24 md:mb-24">
+        <h2 className="font-libertinus font-semibold text-gray-900 mb-4 tracking-tighter text-4xl md:text-6xl">
           Con derek recuerda todo lo que estudias
         </h2>
         <p className="text-base text-gray-700 font-inter">
@@ -21,11 +21,11 @@ export default function Benefits() {
         </p>
       </div>
       {/* Benefit Card 1 */}
-      <div className="w-[80vw] max-w-5xl mx-auto mb-10">
+      <div className="w-[90vw] max-w-5xl mx-auto mb-10">
         <Card className="flex flex-col md:flex-row items-center justify-between p-6 relative overflow-hidden bg-gray-50 border border-gray-300">
           {/* Left: Text */}
           <div className="md:w-1/2 space-y-1">
-            <h3 className="text-4xl font-libertinus font-semibold text-gray-900 tracking-tighter">
+            <h3 className="text-3xl font-libertinus font-normal text-gray-900 tracking-tighter">
               Crea flashcards en segundos
             </h3>
             <p className="text-base leading-6 text-gray-700 font-inter">
@@ -47,11 +47,11 @@ export default function Benefits() {
         </Card>
       </div>
       {/* Benefit Card 2 */}
-      <div className="w-[80vw] max-w-5xl mx-auto mb-10">
+      <div className="w-[90vw] max-w-5xl mx-auto mb-10">
         <Card className="flex flex-col md:flex-row items-center justify-between p-6 relative overflow-hidden bg-gray-50 border border-gray-300">
           {/* Left: Text */}
           <div className="md:w-1/2 space-y-1">
-            <h3 className="text-4xl font-libertinus font-semibold text-gray-900 tracking-tighter">
+            <h3 className="text-3xl font-libertinus font-normal text-gray-900 tracking-tighter">
               No olvides nada de lo que estudias
             </h3>
             <p className="text-base leading-6 text-gray-700 font-inter">
@@ -73,11 +73,11 @@ export default function Benefits() {
         </Card>
       </div>
       {/* Benefit Card 3 */}
-      <div className="w-[80vw] max-w-5xl mx-auto mb-10">
+      <div className="w-[90vw] max-w-5xl mx-auto mb-10">
         <Card className="flex flex-col md:flex-row items-center justify-between p-6 relative overflow-hidden bg-gray-50 border border-gray-300">
           {/* Left: Text */}
           <div className="md:w-1/2 space-y-1">
-            <h3 className="text-4xl font-libertinus font-semibold text-gray-900 tracking-tighter">
+            <h3 className="text-3xl font-libertinus font-normal text-gray-900 tracking-tighter">
               Presenta tus exámenes con seguridad
             </h3>
             <p className="text-base leading-6 text-gray-700 font-inter">
@@ -99,11 +99,11 @@ export default function Benefits() {
         </Card>
       </div>
       {/* Benefit Card 4 */}
-      <div className="w-[80vw] max-w-5xl mx-auto mb-10">
+      <div className="w-[90vw] max-w-5xl mx-auto mb-10">
         <Card className="flex flex-col md:flex-row items-center justify-between p-6 relative overflow-hidden bg-gray-50 border border-gray-300">
           {/* Left: Text */}
           <div className="md:w-1/2 space-y-1">
-            <h3 className="text-4xl font-libertinus font-semibold text-gray-900 tracking-tighter">
+            <h3 className="text-3xl font-libertinus font-normal text-gray-900 tracking-tighter">
               Modo de casos clínicos
             </h3>
             <p className="text-base leading-6 text-gray-700 font-inter">
@@ -125,11 +125,11 @@ export default function Benefits() {
         </Card>
       </div>
       {/* Benefit Card 5 */}
-      <div className="w-[80vw] max-w-5xl mx-auto mb-10">
+      <div className="w-[90vw] max-w-5xl mx-auto mb-10">
         <Card className="flex flex-col md:flex-row items-center justify-between p-6 relative overflow-hidden bg-gray-50 border border-gray-300">
           {/* Left: Text */}
           <div className="md:w-1/2 space-y-1">
-            <h3 className="text-4xl font-libertinus font-semibold text-gray-900 tracking-tighter">
+            <h3 className="text-3xl font-libertinus font-normal text-gray-900 tracking-tighter">
               ¿Tomas un curso ENARM?
             </h3>
             <p className="text-base leading-6 text-gray-700 font-inter">

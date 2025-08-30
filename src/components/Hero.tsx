@@ -19,10 +19,10 @@ export default function Hero({ onLoginClick }: HeroProps) {
 
       {/* Hero content */}
       <div className="mx-auto max-w-3xl px-7 pb-24 pt-20 flex flex-col items-center justify-center text-center">
-        <h1 className="text-4xl font-libertinus font-semibold tracking-tight text-gray-900 sm:text-6xl mb-1">
+        <h1 className="font-libertinus font-semibold text-gray-900 mb-1 tracking-tighter text-4xl md:text-6xl">
           Estudia el doble, en la mitad del tiempo
         </h1>
-        <p className="font-inter mt-3 mb-5 text-base/2 leading-8 text-gray-900">
+        <p className="font-inter mt-6 text-lg leading-6 text-gray-900">
           Genera flashcards y quizzes de tus apuntes en segundos, estudia con métodos comprobados científicamente para que no vuelvas a olvidar nada
         </p>
         <div className="relative w-[90vw] max-w-7xl self-center my-6">

@@ -1,5 +1,6 @@
 "use client"
 import { Button } from "./ui/button";
+import { FcGoogle } from "react-icons/fc";
 
 type CalltoactionProps = {
   onLoginClick: () => void;
@@ -14,31 +15,31 @@ export default function Calltoaction({ onLoginClick }: CalltoactionProps) {
           <div className="absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
         </div>
       </div>{/* Centered Title and Paragraph */}
-      <div className="text-center mb-6 mt-24 w-full sm:w-[90vw] mx-auto">
-        <h2 className="text-5xl font-libertinus font-semibold text-gray-900 mb-3 tracking-tighter">
+      <div className="w-[90vw] text-center mb-6 mt-24 mx-auto">
+        <h2 className="text-4xl font-libertinus font-semibold text-gray-900 mb-3 tracking-tighter">
           Acelera tu aprendizaje hoy
         </h2>
         <p className="text-base text-gray-700 font-inter">
           Derek estará disponible muy pronto, regístrate hoy y obtén créditos gratis el dia de lanzamiento
         </p>
       </div>
-        <div className="mt-1">
-            <Button
-            size="lg"
-            onClick={onLoginClick}
-            >
-            Regístrate ahora
-            </Button>
-        </div>
-        <div className="mt-1">
-            <Button
-            size="lg"
-            onClick={onLoginClick}
-            >
-            Regístrate con Google
-            </Button>
-        </div>
-        
+      <div className="w-full max-w-xs flex flex-col gap-2">
+        <Button
+          size="lg"
+          onClick={onLoginClick}
+          className="w-full"
+        >
+          Regístrate ahora
+        </Button>
+        <Button
+          size="lg"
+          onClick={onLoginClick}
+          className="w-full flex items-center justify-center gap-2"
+        >
+          <FcGoogle className="text-xl" />
+          Regístrate con Google
+        </Button>
+      </div>
     </div>
     );
 }

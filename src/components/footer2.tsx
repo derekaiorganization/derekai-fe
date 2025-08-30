@@ -64,9 +64,9 @@ const Footer2 = ({
   ],
 }: Footer2Props) => {
   return (
-    <section className="py-32">
-      <div className="container">
-        <footer>
+    <section className="py-32 w-screen">
+      <div className="w-screen mx-0">
+        <footer className="mx-12">
           <div className="grid grid-cols-2 gap-8 lg:grid-cols-6">
             <div className="col-span-2 mb-8 lg:mb-0">
               <div className="flex items-center gap-2 lg:justify-start">
@@ -82,7 +82,7 @@ const Footer2 = ({
               </div>
             </div>
             {menuItems.map((section, sectionIdx) => (
-              <div key={sectionIdx}>
+              <div key={sectionIdx} className="text-left mx-12">
                 <h3 className="mb-4 font-bold">{section.title}</h3>
                 <ul className="text-muted-foreground space-y-4">
                   {section.links.map((link, linkIdx) => (
@@ -97,7 +97,7 @@ const Footer2 = ({
               </div>
             ))}
           </div>
-          <div className="text-muted-foreground mt-24 flex flex-col justify-between gap-4 border-t pt-8 text-sm font-medium md:flex-row md:items-center">
+          <div className="text-muted-foreground mt-24 flex flex-col justify-between gap-4 border-t pt-8 text-sm font-medium md:flex-row md:items-center mx-12">
             <p>{copyright}</p>
             <ul className="flex gap-4">
               {bottomLinks.map((link, linkIdx) => (
