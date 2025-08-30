@@ -1,5 +1,5 @@
 "use client"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogClose } from "@/components/ui/Dialog"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogClose } from "@/components/ui/Dialog2"
 import { LoginForm } from "./LoginForm"
 
 export default function LoginModal({ open, onOpenChange }: { open: boolean, onOpenChange: (open: boolean) => void }) {
