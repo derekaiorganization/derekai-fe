@@ -1,5 +1,7 @@
 import React from "react";
 import "./globals.css";
+import { AlertDialogProvider } from "@/context/AlertDialogContext";
+import GlobalAlertDialog from "@/components/GlobalAlertDialog";
 
 export default function RootLayout({
   children,
@@ -8,7 +10,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
+      <head >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -17,7 +20,10 @@ export default function RootLayout({
         />
       </head>
       <body>
-        {children}
+        <AlertDialogProvider>
+          {children}
+          <GlobalAlertDialog />
+        </AlertDialogProvider>
       </body>
     </html>
   );

@@ -109,9 +109,9 @@ export function LoginForm({
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
         <CardHeader>
-          <CardTitle className="font-libertinus font-semibold text-2xl tracking-tighter text-center">Regístrate hoy</CardTitle>
+          <CardTitle className="font-libertinus font-semibold text-2xl tracking-tighter text-center">Únete a la lista de espera</CardTitle>
           <CardDescription className="text-center">
-            Ingresa tu correo electrónico para registrarte en tu cuenta
+            Derek estará disponible muy pronto. ¡Ingresa tu correo electrónico para unirte a la lista de espera y tener privilegios especiales el día de lanzamiento!
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -142,12 +142,6 @@ export function LoginForm({
                   Registrarme con Google
                 </Button>
               </div>
-            </div>
-            <div className="mt-4 text-center text-sm">
-              ¿Ya tienes una cuenta?{" "}
-              <a href="#" className="underline underline-offset-4">
-                Iniciar sesión
-              </a>
             </div>
           </form>
         </CardContent>

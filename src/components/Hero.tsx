@@ -37,7 +37,7 @@ export default function Hero({ onLoginClick }: HeroProps) {
           {/* Button slightly on top of the image */}
           <div className="absolute left-1/2 top-[80%] transform -translate-x-1/2 z-10">
             <Button className='px-10 py-4 text-base font-normal' onClick={onLoginClick}>
-              Comenzar hoy
+              Comenzar
             </Button>
           </div>
         </div>
