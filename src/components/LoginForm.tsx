@@ -12,6 +12,8 @@ import { Input } from "@/components/ui/Input"
 import { Label } from "@/components/ui/Label"
 import { supabaseBrowser } from "@/lib/supabase/browser"
 import { useState, useEffect } from "react"
+import { FcGoogle } from "react-icons/fc";
+import { Separator } from "@/components/ui/separator";
 
 export function LoginForm({
   className,
@@ -109,10 +111,29 @@ export function LoginForm({
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
         <CardHeader>
-          <CardTitle className="font-libertinus font-semibold text-2xl tracking-tighter text-center">Únete a la lista de espera</CardTitle>
+          <CardTitle className="font-libertinus font-semibold text-2xl tracking-tighter text-center">
+            Únete a la lista de espera
+          </CardTitle>
           <CardDescription className="text-center">
             Derek estará disponible muy pronto. ¡Ingresa tu correo electrónico para unirte a la lista de espera y tener privilegios especiales el día de lanzamiento!
           </CardDescription>
+          {/* Google button below description, above form */}
+          <Button
+            variant="outline"
+            onClick={signInWithGoogle}
+            className="w-full flex items-center justify-center gap-2 mt-6"
+          >
+            <FcGoogle className="text-xl" />
+            Registrarme con Google
+          </Button>
+          {/* Divider with text below Google button */}
+          <div className="flex items-center gap-4 w-full mt-2">
+            <Separator className="flex-1" />
+            <span className="font-inter text-sm text-gray-500 mx-2 whitespace-nowrap">
+              o regístrate con tu correo
+            </span>
+            <Separator className="flex-1" />
+          </div>
         </CardHeader>
         <CardContent>
           <form>
@@ -137,9 +158,6 @@ export function LoginForm({
               <div className="flex flex-col gap-3">
                 <Button disabled={loading} type="submit" onClick={signUpWithEmail} className="w-full">
                   Registrarme
-                </Button>
-                <Button variant="outline" onClick={signInWithGoogle} className="w-full">
-                  Registrarme con Google
                 </Button>
               </div>
             </div>
