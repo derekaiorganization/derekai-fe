@@ -2,18 +2,21 @@
 
 import React from "react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/Dialog";
-import { LoginForm } from "./LoginForm";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden"
 
-type GlobalLoginModalProps = {
+type GlobalLoginModalProps<T extends Record<string, any>> = {
   open: boolean;
   onClose: () => void;
+  component: React.ElementType;
+  componentProps?: T;
 };
 
-export default function GlobalLoginModal({
+export default function GlobalModal<T extends Record<string, any>>({
   open,
   onClose,
-}: GlobalLoginModalProps) {
+  component: Component,
+  componentProps
+}: GlobalLoginModalProps<T>) {
 
   if (!open) return null;
 
@@ -23,7 +26,7 @@ export default function GlobalLoginModal({
         <VisuallyHidden>
           <DialogTitle>Modal de registro</DialogTitle>
         </VisuallyHidden>
-        <LoginForm />
+        <Component {...componentProps} />
       </DialogContent>
     </Dialog>
   );

@@ -14,11 +14,14 @@ import { supabaseBrowser } from "@/lib/supabase/browser"
 import { useState } from "react"
 import { FcGoogle } from "react-icons/fc";
 import { Separator } from "@/components/ui/separator";
+import router from "next/router"
 
-export function LoginForm({
-  className,
-  ...props
-}: React.ComponentProps<"div">) {
+type LoginFormProps = {
+  onSuccess?: () => void;
+};
+
+
+export function LoginForm({ onSuccess }: LoginFormProps) {
   const supabase = supabaseBrowser;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -71,7 +74,7 @@ export function LoginForm({
     if (error) {
       alert(error.message);
     } else {
-      alert("Check your email for a confirmation link (if required).");
+      if (onSuccess) onSuccess();
     }
     setLoading(false);
   };
@@ -87,12 +90,12 @@ export function LoginForm({
       alert(error.message);
     } else {
       // On success redirect or reload to get server-side session
-      window.location.href = "/";
+      router.push("/");
     }
     setLoading(false);
   };
   return (
-    <div className={cn("flex flex-col gap-6", className)} {...props}>
+    <div className={cn("flex flex-col gap-6")}>
       <Card>
         <CardHeader>
           <CardTitle className="font-libertinus font-semibold text-2xl tracking-tighter text-center">
@@ -137,7 +140,7 @@ export function LoginForm({
                 <div className="flex items-center">
                   <Label htmlFor="Contraseña">Contraseña</Label>
                 </div>
-                <Input id="password" type="password" required onChange={handlePasswordChange} value={password} />
+                <Input id="password" type="password" placeholder="Ingresa una contraseña" required onChange={handlePasswordChange} value={password} />
               </div>
               <div className="flex flex-col gap-3">
                 <Button disabled={loading} type="submit" onClick={signUpWithEmail} className="w-full">
