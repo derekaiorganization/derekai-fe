@@ -11,7 +11,7 @@ import {
 import { Input } from "@/components/ui/Input"
 import { Label } from "@/components/ui/Label"
 import { supabaseBrowser } from "@/lib/supabase/browser"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { FcGoogle } from "react-icons/fc";
 import { Separator } from "@/components/ui/separator";
 
@@ -23,7 +23,6 @@ export function LoginForm({
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -32,21 +31,6 @@ export function LoginForm({
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
   };
-
-  useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => {
-      if (data.session?.user) setModalOpen(true);
-    });
-
-    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
-      if (session?.user) setModalOpen(true);
-    });
-
-    return () => {
-      listener.subscription.unsubscribe();
-    };
-  }, [supabase]);
-
 
   // Start Google OAuth flow (redirects user)
   const signInWithGoogle = async () => {
@@ -158,6 +142,9 @@ export function LoginForm({
               <div className="flex flex-col gap-3">
                 <Button disabled={loading} type="submit" onClick={signUpWithEmail} className="w-full">
                   Registrarme
+                </Button>
+                <Button variant="outline" disabled={loading} onClick={signInWithGoogle} className="w-full">
+                  Registrarme con Google
                 </Button>
               </div>
             </div>

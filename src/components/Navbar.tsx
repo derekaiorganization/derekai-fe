@@ -1,42 +1,28 @@
 "use client"
 import Link from "next/link"
 import Image from "next/image"
-import { useEffect, useState } from "react"
 import { Button } from "./ui/Button"
 import { Avatar, AvatarImage, AvatarFallback } from "./ui/Avatar"
-import { supabaseBrowser } from "@/lib/supabase/browser"
 import { Tooltip, TooltipTrigger, TooltipContent } from "./ui/Tooltip";
 import { useGlobalAlertDialog } from "@/context/AlertDialogContext";
-import { User } from "@supabase/supabase-js"
+import { useSupabaseUser } from "@/hooks/useSupabaseUser"
 
 type NavbarProps = {
   onLoginClick: () => void;
 };
 
 export default function Navbar({ onLoginClick }: NavbarProps) {
-  const [user, setUser] = useState<User | null | undefined>({} as User);
   const { setOpen } = useGlobalAlertDialog();
-
-  useEffect(() => {
-    supabaseBrowser.auth.getUser().then(({ data }) => {
-      setUser(data?.user);
-    });
-    const { data: listener } = supabaseBrowser.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user);
-    });
-    return () => {
-      listener.subscription.unsubscribe();
-    };
-  }, []);
+  const { user } = useSupabaseUser();
 
   // Get initials from full_name or email
   const initials =
     user?.user_metadata?.full_name
       ? user.user_metadata.full_name
-          .split(" ")
-          .map((n: string) => n[0])
-          .join("")
-          .toUpperCase()
+        .split(" ")
+        .map((n: string) => n[0])
+        .join("")
+        .toUpperCase()
       : user?.email?.[0]?.toUpperCase();
 
   return (

@@ -1,12 +1,58 @@
 "use client"
+import { supabaseBrowser } from "@/lib/supabase/browser";
 import { Button } from "./ui/Button";
 import { FcGoogle } from "react-icons/fc";
+import { useGlobalAlertDialog } from "@/context/AlertDialogContext";
+import { useSupabaseUser } from "@/hooks/useSupabaseUser";
 
 type CallToActionProps = {
   onLoginClick: () => void;
 };
 
 export default function CallToAction({ onLoginClick }: CallToActionProps) {
+  const { user } = useSupabaseUser();
+  const { setOpen } = useGlobalAlertDialog();
+  const supabase = supabaseBrowser;
+
+  // Start Google OAuth flow (redirects user)
+  const signInWithGoogle = async () => {
+    // The redirectTo must match the entry in Supabase & Google Cloud OAuth
+    const redirectTo = `${window.location.origin}/auth/callback`;
+
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo,
+      },
+    });
+
+    // In many setups the browser will already have been redirected by supabase
+    // but in case supabase returns a url, we redirect manually
+    if (error) {
+      alert(error.message);
+      return;
+    }
+
+    if (data?.url) {
+      window.location.href = data.url;
+    }
+  };
+
+  const onRegisterButtonClick = (mode: string) => {
+    if (!user) {
+      switch (mode) {
+        case "email":
+          onLoginClick();
+          break;
+        case "google":
+          signInWithGoogle();
+          break;
+      }
+    } else {
+      setOpen(true);
+    }
+  };
+
   return (
     <div className="relative py-14 flex flex-col items-center justify-center">
       {/* Background pattern */}
@@ -26,14 +72,14 @@ export default function CallToAction({ onLoginClick }: CallToActionProps) {
       <div className="w-full max-w-xs flex flex-col gap-2">
         <Button
           size="lg"
-          onClick={onLoginClick}
+          onClick={() => onRegisterButtonClick("email")}
           className="w-full"
         >
           Regístrate ahora
         </Button>
         <Button
           size="lg"
-          onClick={onLoginClick}
+          onClick={() => onRegisterButtonClick("google")}
           className="w-full flex items-center justify-center gap-2"
         >
           <FcGoogle className="text-xl" />
@@ -41,5 +87,5 @@ export default function CallToAction({ onLoginClick }: CallToActionProps) {
         </Button>
       </div>
     </div>
-    );
+  );
 }
