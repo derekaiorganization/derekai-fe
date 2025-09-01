@@ -1,4 +1,5 @@
 "use client"
+import { supabaseBrowser } from "@/lib/supabase/browser";
 import { Button } from "./ui/Button";
 import { FcGoogle } from "react-icons/fc";
 
@@ -7,6 +8,31 @@ type CallToActionProps = {
 };
 
 export default function CallToAction({ onLoginClick }: CallToActionProps) {
+  const supabase = supabaseBrowser;
+  // Start Google OAuth flow (redirects user)
+  const signInWithGoogle = async () => {
+    // The redirectTo must match the entry in Supabase & Google Cloud OAuth
+    const redirectTo = `${window.location.origin}/auth/callback`;
+
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo,
+      },
+    });
+
+    // In many setups the browser will already have been redirected by supabase
+    // but in case supabase returns a url, we redirect manually
+    if (error) {
+      alert(error.message);
+      return;
+    }
+
+    if (data?.url) {
+      window.location.href = data.url;
+    }
+  };
+
   return (
     <div className="relative py-14 flex flex-col items-center justify-center">
       {/* Background pattern */}
@@ -33,7 +59,7 @@ export default function CallToAction({ onLoginClick }: CallToActionProps) {
         </Button>
         <Button
           size="lg"
-          onClick={onLoginClick}
+          onClick={signInWithGoogle}
           className="w-full flex items-center justify-center gap-2"
         >
           <FcGoogle className="text-xl" />
@@ -41,5 +67,5 @@ export default function CallToAction({ onLoginClick }: CallToActionProps) {
         </Button>
       </div>
     </div>
-    );
+  );
 }
