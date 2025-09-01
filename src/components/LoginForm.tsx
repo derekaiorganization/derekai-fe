@@ -143,9 +143,6 @@ export function LoginForm({
                 <Button disabled={loading} type="submit" onClick={signUpWithEmail} className="w-full">
                   Registrarme
                 </Button>
-                <Button variant="outline" disabled={loading} onClick={signInWithGoogle} className="w-full">
-                  Registrarme con Google
-                </Button>
               </div>
             </div>
           </form>
