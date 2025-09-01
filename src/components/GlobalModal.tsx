@@ -4,14 +4,14 @@ import React from "react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/Dialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden"
 
-type GlobalLoginModalProps<T extends Record<string, any>> = {
+type GlobalLoginModalProps<T extends Record<string, unknown>> = {
   open: boolean;
   onClose: () => void;
   component: React.ElementType;
   componentProps?: T;
 };
 
-export default function GlobalModal<T extends Record<string, any>>({
+export default function GlobalModal<T extends Record<string, unknown>>({
   open,
   onClose,
   component: Component,
