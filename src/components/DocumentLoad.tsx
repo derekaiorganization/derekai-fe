@@ -1,7 +1,9 @@
+import { useGlobalAlertDialog } from "@/context/AlertDialogContext";
 import { Button } from "./ui/Button";
 import { FaFilePdf, FaFileWord, FaFilePowerpoint } from "react-icons/fa";
 
 export default function DocumentLoad() {
+  const { setOpen } = useGlobalAlertDialog();
   return (
     <div className="relative flex items-center justify-center min-h-[60vh]">
       {/* Background pattern */}
@@ -34,7 +36,7 @@ export default function DocumentLoad() {
               ó carga tu archivo
             </div>
             {/* Button */}
-            <Button className="px-6 font-normal w-full sm:w-auto">Cargar archivo</Button>
+            <Button className="px-6 font-normal w-full sm:w-auto" onClick={() => setOpen(true)}>Cargar archivo</Button>
           </div>
         </div>
       </div>
