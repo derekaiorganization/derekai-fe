@@ -25,7 +25,7 @@ export async function GET(req: Request) {
     const supabase = await createServerSupabase();
 
     // Exchange the code for a session and set cookies for the browser
-    const { data, error: exError } = await supabase.auth.exchangeCodeForSession(code);
+    const { error: exError } = await supabase.auth.exchangeCodeForSession(code);
 
     if (exError) {
         // If exchange fails, you can log and redirect to login

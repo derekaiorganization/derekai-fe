@@ -135,7 +135,7 @@ export function LoginForm({
                 <Input id="password" type="password" required onChange={handlePasswordChange} value={password} />
               </div>
               <div className="flex flex-col gap-3">
-                <Button type="submit" onClick={signUpWithEmail} className="w-full">
+                <Button disabled={loading} type="submit" onClick={signUpWithEmail} className="w-full">
                   Registrarme
                 </Button>
                 <Button variant="outline" onClick={signInWithGoogle} className="w-full">

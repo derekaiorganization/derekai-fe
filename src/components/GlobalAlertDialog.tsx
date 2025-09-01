@@ -7,7 +7,7 @@ import {
   AlertDialogDescription,
   AlertDialogFooter,
   AlertDialogAction,
-} from "./ui/alert-dialog";
+} from "./ui/AlertDialog";
 import { useGlobalAlertDialog } from "@/context/AlertDialogContext";
 
 export default function GlobalAlertDialog() {
