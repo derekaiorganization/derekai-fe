@@ -3,9 +3,9 @@ import Link from "next/link"
 import Image from "next/image"
 import { useEffect, useState } from "react"
 import { Button } from "./ui/Button"
-import { Avatar, AvatarImage, AvatarFallback } from "./ui/avatar2"
+import { Avatar, AvatarImage, AvatarFallback } from "./ui/Avatar"
 import { supabaseBrowser } from "@/lib/supabase/browser"
-import { Tooltip, TooltipTrigger, TooltipContent } from "./ui/Tooltip2";
+import { Tooltip, TooltipTrigger, TooltipContent } from "./ui/Tooltip";
 import { useGlobalAlertDialog } from "@/context/AlertDialogContext";
 import { User } from "@supabase/supabase-js"
 
