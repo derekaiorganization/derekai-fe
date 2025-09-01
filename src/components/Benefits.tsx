@@ -124,32 +124,6 @@ export default function Benefits() {
           </div>
         </Card>
       </div>
-      {/* Benefit Card 5 */}
-      <div className="w-[90vw] max-w-5xl mx-auto mb-10">
-        <Card className="flex flex-col md:flex-row items-center justify-between p-6 relative overflow-hidden bg-gray-50 border border-gray-300">
-          {/* Left: Text */}
-          <div className="md:w-1/2 space-y-1">
-            <h3 className="text-3xl font-libertinus font-normal text-gray-900 tracking-tighter">
-              ¿Tomas un curso ENARM?
-            </h3>
-            <p className="text-base leading-6 text-gray-700 font-inter">
-              Vemos el video contigo y al final te damos un resumen y material de estudio
-            </p>
-          </div>
-          {/* Right: Image "emerging" from bottom */}
-          <div className="md:w-1/2 flex justify-center relative h-64">
-            <div className="relative">
-              <Image
-                src="/images/benefit-videos.svg"
-                alt="Flashcards preview"
-                width={500}
-                height={200}
-                className="relative translate-y-1"
-              />
-            </div>
-          </div>
-        </Card>
-      </div>
     </div>
   );
 }
