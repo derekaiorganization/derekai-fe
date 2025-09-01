@@ -116,6 +116,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -127,4 +128,8 @@
 
 .font-libertinus {
   font-family: 'Libertinus Serif', serif;
+}
+
+Button {
+  cursor: pointer;
 }
