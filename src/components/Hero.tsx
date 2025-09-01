@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import { Button } from './ui/Button';
+import { useSupabaseUser } from '@/hooks/useSupabaseUser';
+import { useGlobalAlertDialog } from '@/context/AlertDialogContext';
 
 type HeroProps = {
   onLoginClick: () => void;
@@ -7,6 +9,17 @@ type HeroProps = {
 
 // Hero component for derek.ai landing page
 export default function Hero({ onLoginClick }: HeroProps) {
+  const { user } = useSupabaseUser();
+  const { setOpen } = useGlobalAlertDialog();
+
+  const onStartButtonClick = () => {
+    if (!user) {
+      onLoginClick();
+    } else {
+      setOpen(true);
+    }
+  };
+
   return (
     <div className="relative isolate overflow-hidden">
       {/* Background pattern */}
@@ -36,7 +49,7 @@ export default function Hero({ onLoginClick }: HeroProps) {
           />
           {/* Button slightly on top of the image */}
           <div className="absolute left-1/2 top-[80%] transform -translate-x-1/2 z-10">
-            <Button className='px-10 py-4 text-base font-normal' onClick={onLoginClick}>
+            <Button className='px-10 py-4 text-base font-normal' onClick={onStartButtonClick}>
               Comenzar
             </Button>
           </div>
