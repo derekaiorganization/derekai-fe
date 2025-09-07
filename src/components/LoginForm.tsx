@@ -14,7 +14,7 @@ import { supabaseBrowser } from "@/lib/supabase/browser"
 import { useState } from "react"
 import { FcGoogle } from "react-icons/fc";
 import { Separator } from "@/components/ui/separator";
-import router from "next/router"
+import { useRouter } from "next/navigation"
 
 type LoginFormProps = {
   onSuccess?: () => void;
@@ -22,6 +22,7 @@ type LoginFormProps = {
 
 
 export function LoginForm({ onSuccess }: LoginFormProps) {
+  const router = useRouter();
   const supabase = supabaseBrowser;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
